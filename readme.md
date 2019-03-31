@@ -26,4 +26,4 @@ int main()
 }
 ```
 
-You may treat `myVector` or `myVector2` as any normal `std::vector`, such as `myVector.push_back(4); However, as of right now, you cannot bracket initialize a `Cont<std::vector<T>>` or assign another `std::vector<T>` to `Cont<std::vector<T>>`. This will be implemented in a future update.
+You may treat `myVector` or `myVector2` as any normal `std::vector`, such as `myVector.push_back(4);` However, as of right now, you cannot bracket initialize a `Cont<std::vector<T>>` or assign another `std::vector<T>` to `Cont<std::vector<T>>`. This will be implemented in a future update.
