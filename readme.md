@@ -9,6 +9,9 @@ Thanks to Francios Andrieux and Artyer on Stackoverflow for helping me with temp
 ### UPDATE 1
 This update removes all of the included libraries and macros and makes powerful uses of templates. This makes this program a lot more efficient as you no longer need to include all of the libraries in the standard template library. 
 
+### UPDATE 2
+I have changed the way you print out the containers. Instead of calling `print(myContainer);`, you can now simply do `std::cout << myContainer << std::endl;`.
+
 ### Requirements
 You will need a compiler which supports `C++ 14` or higher.
 

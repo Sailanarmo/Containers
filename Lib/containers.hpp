@@ -35,32 +35,31 @@ namespace container
 
   // prints a single value
   template <typename T>
-  std::string printIt(const T &val)
+  std::ostream& printIt(std::ostream &out, T const &val)
   {
-    return (std::to_string(val) + " ");
+    return (out << val << " ");
   }
 
   // prints values from a map
   template <typename T, typename U>
-  std::string printIt(const std::pair<T,U> &val)
+  std::ostream& printIt(std::ostream &out, std::pair<T,U> const &val)
   {
-    return ("{key: " + std::to_string(val.first) + " value: " + std::to_string(val.second) + "} ");
+    return (out << "{ key: " << val.first << " value: " << val.second << " } ");
   }
 
   // base print function
   template <typename T>
-  void print(const Cont<T> &p)
+  std::ostream& operator<<(std::ostream &out, const Cont<T> &p)
   {
-    std::cout << "Container name: " << p.name << std::endl;
-    //std::cout << "Container type: " << type_name<decltype(p)>() << std::endl; //uncomment if you want the type
-    std::cout << "Container Contents: " << std::endl;
+    out << "Container name: " << p.name << std::endl;
+    //out << "Container type: " << type_name<decltype(p)>() << std::endl; //uncomment if you want the type
+    out << "Container Contents: " << std::endl;
 
-    for(const auto &e: p)
-    {
-      std::cout << printIt(e);
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
+    for(const auto &e: p) printIt(out,e);
+
+    out << std::endl;
+
+    return out;
   }
 }
 #endif
